@@ -1,0 +1,39 @@
+-- Create Tables For Car Dealerships Database --
+
+CREATE TABLE Customers (
+    customer_id INT AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email_address VARCHAR(60) NOT NULL,
+    PRIMARY KEY (customer_id),
+    UNIQUE KEY (email_address)
+);
+
+CREATE TABLE Companies(
+	company_id INT AUTO_INCREMENT,
+    company_name VARCHAR(100) NOT NULL,
+    headquarters_phone_number VARCHAR(100),
+    PRIMARY KEY(company_id)
+);
+
+CREATE TABLE Items (
+	item_code VARCHAR(10) UNIQUE NOT NULL,
+    item VARCHAR(200) NOT NULL,
+    unit_price DECIMAL(6,2) NOT NULL,
+    company_id INT,
+    PRIMARY KEY(item_code),
+    FOREIGN KEY(company_id) REFERENCES Companies(company_id) ON DELETE CASCADE
+);
+
+CREATE TABLE Sales(
+	purchase_number INT AUTO_INCREMENT,
+    date_of_purchase DATE NOT NULL,
+    customer_id INT,
+    item_code VARCHAR(10) NOT NULL,
+    PRIMARY KEY (purchase_number),
+    FOREIGN KEY(customer_id) REFERENCES Customers(customer_id) ON DELETE CASCADE,
+    FOREIGN KEY (item_code) REFERENCES Items(item_code) ON DELETE CASCADE
+);
+
+Show Tables
+
