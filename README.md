@@ -1,4 +1,4 @@
-# Car-Dealership-Database-Creation-in-MYSQL
+# Car Dealership Database Creation in MYSQL
 This database was created to showcase basic skills in creating tables and structuring sql queries. 
 This  project includes four main tables:
 
