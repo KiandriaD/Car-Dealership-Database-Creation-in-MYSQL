@@ -1,5 +1,5 @@
 # Car Dealership Database Creation in MYSQL
-This database was created to showcase basic skills in creating tables and structuring sql queries. 
+This database was created to showcase small and basic skills in creating tables and structuring sql queries. 
 This  project includes four main tables:
 
 Customers – stores customer information such as name and email, with unique identifiers for each customer.
